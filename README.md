@@ -12,6 +12,6 @@ Team `Country`
  * `OPMode.java` - Your team's code
  * `README.md` - A few words documenting your code and your robot in general. You can also add a license if you wish. We recommend one of the three licenses listed [here](https://choosealicense.com/).
 
-You can also optionally add any files you want. We encourage you to link to your [Robodex page](https://robodex.win).
+You can also optionally add any files you want. We encourage you to link to your [Robodex page](https://www.robodex.win/finland).
 
 If you have further inquiries, contact GitHub user nomelif via PM, create an issue here or contac me via email at [theo.friberg@gmail.com](mailto:theo.friberg@gmail.com).
