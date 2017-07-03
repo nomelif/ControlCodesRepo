@@ -3,7 +3,7 @@ Team Finland's "Fidget Spinner"
 
 Team Finland decided to build a quick and agile tripod design. It has seven DCMotors and no servos. The motors `moottori1`, `moottori2` and `moottori3` control the wheels. The motors `harja1`, `harja2` and `harja3` control the external combs. The motor `nostin` actuates the lifting mechanism. `imu` refers to the inertial measurement unit on the main control hub.
 
-[Robodex page](https://robodex.win)
+[Robodex page](https://robodex.win/finland)
 
 ## MIT License
 
