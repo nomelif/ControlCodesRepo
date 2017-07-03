@@ -14,4 +14,4 @@ Team `Country`
 
 You can also optionally add any files you want.
 
-If you have further inquiries, contact GitHub user nomelif via PM, create an issue here or contac me via email at [theo.friberg@gmail.com](theo.friberg@gmail.com).
+If you have further inquiries, contact GitHub user nomelif via PM, create an issue here or contac me via email at [theo.friberg@gmail.com](mailto:theo.friberg@gmail.com).
