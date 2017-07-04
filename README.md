@@ -14,4 +14,6 @@ Team `Country`
 
 You can also optionally add any files you want. We encourage you to link to your [Robodex page](https://www.robodex.win).
 
+The `Utils` folder is for any dependencies that may meaningfully be reused by other scripts. This includes drivers.
+
 If you have further inquiries, contact GitHub user nomelif via PM, create an issue here or contac me via email at [theo.friberg@gmail.com](mailto:theo.friberg@gmail.com).
