@@ -3,6 +3,8 @@ Team Estonia's robot
 
 Team Estonia built a robot which is able to collect and store blue and orange balls.
 
+[Robodex page](https://www.robodex.win/estonia)
+
 ## Motors:
 
 `leftMotorBack` - left back motor that is used for driving
