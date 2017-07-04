@@ -63,6 +63,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
                 DcMotor[] motors = new DcMotor[]{hardwareMap.dcMotor.get("moottori1"), hardwareMap.dcMotor.get("moottori2"), hardwareMap.dcMotor.get("moottori3")};
                 DcMotor[] hetulat = new DcMotor[]{hardwareMap.dcMotor.get("harja1"), hardwareMap.dcMotor.get("harja2"), hardwareMap.dcMotor.get("harja3")};
                 DcMotor nostin = hardwareMap.dcMotor.get("nostin");
+
+                // This uses the driver bno055driver.java from the Utils-folder of this repository
+
                 bno055driver imutus = new bno055driver("imu", hardwareMap);
 
                 // Diagnostic print of attached components
