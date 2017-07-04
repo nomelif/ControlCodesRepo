@@ -3,7 +3,7 @@ Team Estonia's robot
 
 Team Estonia built a robot which is able to collect and store blue and orange balls.
 
-##Motors:
+## Motors:
 
 `leftMotorBack` - left back motor that is used for driving
 `leftMotorFront` - left front motor that is used for driving
@@ -14,7 +14,7 @@ Team Estonia built a robot which is able to collect and store blue and orange ba
 `FrontRoller` - front roller that is used to collect balls
 `BackRoller` - back roller that is used to collect balls
 
-##Servos:
+## Servos:
 
 
 `MyServo` - sorting mechanism that is used to seperate orange and blue balls
@@ -22,14 +22,14 @@ Team Estonia built a robot which is able to collect and store blue and orange ba
 `Blue_door` - door that is used to eject the blue balls
 `Blocker` - blocker that is used to stop half of the balls from entering
 
-##Sensors:
+## Sensors:
 
 `MySensor1` - left side sensor on the sorting system that is used to sort the balls into the correct storage
 `MySensor2` - right side sensor on the sorting system that is used to sort the balls into the correct storage
 `MySensor3` - left side sensor in front of the robot that is used to stop different coloured balls from entering at the same time
 `MySensor4` - right side sensor in front of the robot that is used to stop different coloured balls from entering at the same time
 
-##MIT License
+## MIT License
 
 Copyright (c) 2017 Timo Loomets
 
