@@ -9,7 +9,7 @@ For clarity you should create a directory as follows:
 
 Team `Country`
 
- * `OPMode.java` - Your team's code
+ * `OPMode.java` or `OPMode.blk` - Your team's code
  * `README.md` - A few words documenting your code and your robot in general. You can also add a license if you wish. We recommend one of the three licenses listed [here](https://choosealicense.com/).
 
 You can also optionally add any files you want. We encourage you to link to your [Robodex page](https://www.robodex.win).
