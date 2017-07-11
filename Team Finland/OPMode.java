@@ -2,6 +2,8 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
@@ -67,6 +69,17 @@ import com.qualcomm.robotcore.hardware.DcMotor;
                 // This uses the driver bno055driver.java from the Utils-folder of this repository
 
                 bno055driver imutus = new bno055driver("imu", hardwareMap);
+                
+                // These are used to prevent falling over. They trigger a reflex-like response to lifting one wheel off the ground
+                    
+                DistanceSensor[] distanceSensors = new DistanceSensor[]{(DistanceSensor) hardwareMap.get("color1"), (DistanceSensor) hardwareMap.get("color2"), (DistanceSensor) hardwareMap.get("color3")};
+                
+                    
+                // These are used for the activation functions of the sensors. Measured values (components are not reliable)
+                // The functions are of the form tanh(distance*distanceMultiplier + distanceConstant) + 1.
+
+                double[] distanceMultipliers = new double[]{0.5, 1.5, 0.5};
+                double[] distanceConstants = new double[]{-5, -14, -7};
 
                 // Diagnostic print of attached components
 
@@ -172,7 +185,30 @@ import com.qualcomm.robotcore.hardware.DcMotor;
                     };
 
                     double[] motor_proportions = new double[3];
+                        
+                    // Active stabilisation: monitor distance from the ground at the wheels
 
+                    for(int i = 0; i < 3; i++){
+                            
+                        // We use a hyperbolic tangent (thanks Timo) for our activation
+                            
+                        double activation = Math.tanh(distanceSensors[i].getDistance(DistanceUnit.CM)*distanceMultipliers[i] + distanceConstants[i]) + 1;
+                        activation /= 2; // [0, 2] => [0, 1]
+                        
+                        // The sensors can give us NaN values
+                            
+                        if(!Double.isNaN(activation)) {
+                                
+                            // Compute the angle of activation and propagate it to the desired target
+                                
+                            double[] target_change = vecFor(angleFrom(engine_vectors[i]) + Math.PI / 2);
+                            localInput[0] += target_change[0] * activation * 1.0;
+                            localInput[1] += target_change[1] * activation * 1.0;
+                        }
+                    }
+                        
+                    // Generate the actual wheel activations
+                        
                     for(int i = 0; i < 3; i++){
 
                         // Dot the input vector with the engine directions to do a component decomposition
@@ -187,12 +223,29 @@ import com.qualcomm.robotcore.hardware.DcMotor;
                             motor_proportions[i] += rotation_amount*0.5;
                         }
                     }
+                        
+                    // Only activate the engines if it would be succificient to cause movement:
+                    // * Saves electricity (we are on a tight budget with the new detector hardware)
+                    // * Reduces noise (the balance algorithm generates close-to-zero activations that make the engines squeel in agony)
+                        
+                    if(lengthOf(motor_proportions) > 0.3) {
 
-                    for(int i = 0; i < 3; i++) {
+                        for(int i = 0; i < 3; i++) {
 
-                        // Activate engines
+                            // Activate engines
 
-                        motors[i].setPower(motor_proportions[i]*0.7);
+                            motors[i].setPower(motor_proportions[i]*0.7);
+                        }
+                            
+                    }else{
+                            
+                        for (int i = 0; i < 3; i++) {
+                                
+                            // Deactivate engines
+                            
+                                motors[i].setPower(0);
+                        }
+                            
                     }
 
                     double liftPower = 0;
