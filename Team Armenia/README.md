@@ -1,6 +1,6 @@
 # Team Armenia's "Աստղիկ" (Astghik)
 
-Team Armenia's robot is working by collecting the balls, sorting them by color
+Team Armenia's robot is working by collecting balls of any color, sorting them by color
 and keeping them in two different containers and then releasing them, once in front of appropriate window.
 It is able to collect up to 25 blue balls and up to 9 orange balls.
 It is also able to lift itself and hang on the pole.
