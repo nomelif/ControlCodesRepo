@@ -1,7 +1,7 @@
 First Global Control Codes
 ==========================
 
-This repository allows teams competing in the First Global 2017 Challenge to share their control codes and learn from each other.
+This repository allows teams competing in the First Global 2018 Challenge to share their control codes and learn from each other.
 
 You can submit your team's code via [pull request](https://help.github.com/articles/creating-a-pull-request/). If you don't specify otherwise, we take your code to be MIT-lisenced so that it can be freely studied and reused by other teams.
 
